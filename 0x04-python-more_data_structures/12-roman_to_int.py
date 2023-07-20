@@ -13,7 +13,7 @@ def roman_to_int(roman_string):
     }
     numb = [rom_dict[x] for x in roman_string]
     output = 0
-    for d in range(len(numb)):
+    for d in range(len(numb))
         output += numb[d]
         if numb[d - 1] < numb[d] and d != 0:
             output -= (numb[d - 1] + numb[d - 1])
