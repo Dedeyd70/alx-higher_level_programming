@@ -14,7 +14,7 @@ def check(queen, column):
             return False
         if abs(queen[d] - queen[column]) == abs(d - column):
             return False
-    return True
+        return True
 
 
 def fulling(queen, column):
@@ -24,7 +24,7 @@ def fulling(queen, column):
     """
 
     tam = len(queen)
-    exito = 0
+    ex = 0
 
     if column == tam:
         result = []
@@ -37,15 +37,15 @@ def fulling(queen, column):
 
     queen[column] = -1
 
-    while(queen[column] < tam - 1 or exito == 1):
+    while(queen[column] < tam - 1 or ex == 1):
         queen[column] = queen[column] + 1
         if check(queen, column) is True:
             if column != tam:
                 fulling(queen, (column + 1))
             else:
-                exito = 1
+                ex = 1
                 break
-    return True
+            return True
 
 
 if __name__ == "__main__":
