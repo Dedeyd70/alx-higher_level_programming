@@ -8,6 +8,7 @@ def check(queen, column):
     """
     function that checks if the position of each queen is valid
     """
+
     for d in range(column):
         if queen[d] == queen[column]:
             return False
