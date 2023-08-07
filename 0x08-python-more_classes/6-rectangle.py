@@ -7,7 +7,7 @@ function that create a Rectangle from the width and the height variables
 
 
 class Rectangle:
-    """Reprenting a rectangle.
+    """Representing a Rectangle.
     Args:
         @width: integer
         @height: integer
