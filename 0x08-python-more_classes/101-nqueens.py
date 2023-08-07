@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Resolve NQUEEN Problem
+Resolve N queens Problem
 """
 
 
