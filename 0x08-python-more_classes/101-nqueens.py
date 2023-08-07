@@ -24,7 +24,7 @@ def fulling(queen, column):
     """
 
     tam = len(queen)
-    ex = 0
+    exito = 0
 
     if column == tam:
         result = []
@@ -37,13 +37,13 @@ def fulling(queen, column):
 
     queen[column] = -1
 
-    while(queen[column] < tam - 1 or ex == 1):
+    while(queen[column] < tam - 1 or exito == 1):
         queen[column] = queen[column] + 1
         if check(queen, column) is True:
             if column != tam:
                 fulling(queen, (column + 1))
             else:
-                ex = 1
+                exito = 1
                 break
     return True
 
