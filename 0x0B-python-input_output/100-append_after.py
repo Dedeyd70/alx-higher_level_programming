@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-def append_after(filename="", search_string="", new_string=""):
-    """Appending a string after finding a keyword"""
-    my_str = ""
-    with open(filename, encoding="utf8") as fd:
-        for row in fd:
-            my_str += row
-            if search_string in row:
-                my_str += new_string
+"""Defines a text file insertion function."""
 
-    with open(filename, mode="w") as fd:
-        fd.write(my_str)
+
+def append_after(filename="", search_string="", new_string=""):
+    """ Function that appends a new line when a string is found"""
+    text = ""
+    with open(filename, 'r', encoding="utf-8") as f:
+        for row in f:
+            text = text + row
+            if search_string in row:
+                text += new_string
+    with open(filename, 'w', encoding="utf-8") as f:
+        f.write(text)
