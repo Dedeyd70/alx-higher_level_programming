@@ -49,7 +49,7 @@ class Base:
         """returns an instance with all attributes already set"""
         if dictionary and dictionary != {}:
             if cls.__name__ == "Square":
-                new_dummy = cls(1, 1)
+                new_dummy = cls(1)
             else:
                 new_dummy = cls(1, 1)
             new_dummy.update(**dictionary)
