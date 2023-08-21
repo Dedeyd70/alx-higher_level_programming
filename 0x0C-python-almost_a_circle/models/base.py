@@ -121,3 +121,4 @@ class Base:
             t.rt(90)
             t.fd(shape.height)
             t.rt(90)
+        s.exitonclick()
