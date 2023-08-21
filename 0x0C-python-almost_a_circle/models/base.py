@@ -105,7 +105,7 @@ class Base:
         s = turtle.Screen()
         t = turtle.Turtle()
         cl = ["red", "cyan", "brown", "yellow", "pink", "blue", "purple"]
-        turtle.bgcolor("blue")
+        turtle.bgcolor("Teal")
         t.pensize(3)
         shapes = list_rectangles + list_squares
         for rec_sq in shapes:
