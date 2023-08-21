@@ -29,7 +29,7 @@ class test_square(unittest.TestCase):
         '''
         try:
             os.remove("Square.json")
-        except:
+        except FileNotFoundError:
             pass
         del self.s
 
@@ -288,7 +288,7 @@ class test_square(unittest.TestCase):
         '''
         try:
             os.remove("Square.json")
-        except:
+        except FileNotFoundError:
             pass
         r1 = Square(5, 0, 0, 346)
         Square.save_to_file([r1])
@@ -311,7 +311,7 @@ class test_square(unittest.TestCase):
         '''
         try:
             os.remove("Square.json")
-        except:
+        except FileNotFoundError:
             pass
         r1 = Square(5, 0, 0, 346)
         Square.save_to_file(None)
@@ -327,7 +327,7 @@ class test_square(unittest.TestCase):
         '''
         try:
             os.remove("Square.json")
-        except:
+        except FileNotFoundError:
             pass
         r1 = Square(5, 0, 0, 346)
         Square.save_to_file([r1])
@@ -338,33 +338,29 @@ class test_square(unittest.TestCase):
         self.assertEqual(str, type(content))
         try:
             os.remove("Square.json")
-        except:
+        except FileNotFoundError:
             pass
 
     def test_json_string_type(self):
-            '''
-                Testing the returned type
-            '''
-            list_input = [
+        '''Testing the returned type'''
+        list_input = [
                 {'id': 2089, 'size': 10},
                 {'id': 2712, 'size': 1}]
-            json_list_input = Square.to_json_string(list_input)
-            list_output = Square.from_json_string(json_list_input)
-            self.assertEqual(type(list_input), list)
+        json_list_input = Square.to_json_string(list_input)
+        list_output = Square.from_json_string(json_list_input)
+        self.assertEqual(type(list_input), list)
 
     def test_json_string(self):
-            '''
-                Testing that the json string gets converted into a list
-            '''
-            list_input = [
+        '''Testing that the json string gets converted into a list '''
+        list_input = [
                 {'id': 2089, 'size': 10},
                 {'id': 2712, 'size': 7}]
-            json_list_input = Square.to_json_string(list_input)
-            list_output = Square.from_json_string(json_list_input)
-            s1 = {'id': 2089, 'size': 10}
-            s2 = {'size': 7, 'id': 2712}
-            self.assertEqual(list_input[0], s1)
-            self.assertEqual(list_input[1], s2)
+        json_list_input = Square.to_json_string(list_input)
+        list_output = Square.from_json_string(json_list_input)
+        s1 = {'id': 2089, 'size': 10}
+        s2 = {'size': 7, 'id': 2712}
+        self.assertEqual(list_input[0], s1)
+        self.assertEqual(list_input[1], s2)
 
     def test_dict_to_instance(self):
         '''
@@ -376,9 +372,7 @@ class test_square(unittest.TestCase):
         self.assertNotEqual(r1, r2)
 
     def test_isnot_dict_to_instance(self):
-        '''
-            test that an instance is created from a dict
-        '''
+        '''test that an instance is created from a dict'''
         r1 = Square(109)
         r1_dictionary = r1.to_dictionary()
         r2 = Square.create(**r1_dictionary)
@@ -387,7 +381,7 @@ class test_square(unittest.TestCase):
     def test_load_from_file_not_the_same(self):
         '''
             Checking that an object was created from the
-            list but has a different adress.
+            list but has a different address.
         '''
         r1 = Square(10)
         list_squares_input = [r1]

@@ -320,7 +320,7 @@ class test_rectangle(unittest.TestCase):
         '''
         try:
             os.remove("Rectangle.json")
-        except:
+        except FileNotFoundError:
             pass
         r1 = Rectangle(5, 10, 0, 0, 346)
         Rectangle.save_to_file([r1])
@@ -343,7 +343,7 @@ class test_rectangle(unittest.TestCase):
         '''
         try:
             os.remove("Rectangle.json")
-        except:
+        except FileNotFoundError:
             pass
         r1 = Rectangle(5, 10, 0, 0, 346)
         Rectangle.save_to_file(None)
@@ -359,7 +359,7 @@ class test_rectangle(unittest.TestCase):
         '''
         try:
             os.remove("Rectangle.json")
-        except:
+        except FileNotFoundError:
             pass
         r1 = Rectangle(5, 10, 0, 0, 346)
         Rectangle.save_to_file(None)
@@ -370,33 +370,29 @@ class test_rectangle(unittest.TestCase):
         self.assertEqual(str, type(content))
         try:
             os.remove("Rectangle.json")
-        except:
+        except FileNotFoundError:
             pass
 
     def test_json_string_type(self):
-            '''
-                Testing the returned type
-            '''
-            list_input = [
+        '''Testing the returned type'''
+        list_input = [
                 {'id': 2089, 'width': 10, 'height': 4},
                 {'id': 2712, 'width': 1, 'height': 7}]
-            json_list_input = Rectangle.to_json_string(list_input)
-            list_output = Rectangle.from_json_string(json_list_input)
-            self.assertEqual(type(list_input), list)
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        self.assertEqual(type(list_input), list)
 
     def test_json_string(self):
-            '''
-                Testing that the json string gets converted into a list
-            '''
-            list_input = [
+        '''Testing that the json string gets converted into a list'''
+        list_input = [
                 {'id': 2089, 'width': 10, 'height': 4},
                 {'id': 2712, 'width': 1, 'height': 7}]
-            json_list_input = Rectangle.to_json_string(list_input)
-            list_output = Rectangle.from_json_string(json_list_input)
-            s1 = {'id': 2089, 'width': 10, 'height': 4}
-            s2 = {'height': 7, 'id': 2712, 'width': 1}
-            self.assertEqual(list_input[0], s1)
-            self.assertEqual(list_input[1], s2)
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        s1 = {'id': 2089, 'width': 10, 'height': 4}
+        s2 = {'height': 7, 'id': 2712, 'width': 1}
+        self.assertEqual(list_input[0], s1)
+        self.assertEqual(list_input[1], s2)
 
     def test_dict_to_instance(self):
         '''
