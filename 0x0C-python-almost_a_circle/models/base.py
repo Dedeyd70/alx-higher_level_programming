@@ -2,6 +2,7 @@
 """Defining a base model class."""
 import json
 import csv
+import random
 import turtle
 
 
