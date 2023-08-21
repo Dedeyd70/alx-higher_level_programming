@@ -549,3 +549,6 @@ class test_square(unittest.TestCase):
 
         output = '###\n###\n###\n'
         self.assertEqual(capturedOutput.getvalue(), output)
+
+        if __name__ == '__main__':
+            unittest.main()

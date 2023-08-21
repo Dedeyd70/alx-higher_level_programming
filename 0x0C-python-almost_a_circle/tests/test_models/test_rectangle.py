@@ -526,3 +526,6 @@ class test_rectangle(unittest.TestCase):
 
         output = '###\n###\n###\n###\n###\n###\n###\n'
         self.assertEqual(capturedOutput.getvalue(), output)
+
+        if __name__ == '__main__':
+            unittest.main()
