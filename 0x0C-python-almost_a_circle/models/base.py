@@ -48,7 +48,7 @@ class Base:
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
         if dictionary and dictionary != {}:
-            if cls.__name__ == "Rectangle":
+            if cls.__name__ == "Square":
                 new_dummy = cls(1, 1)
             else:
                 new_dummy = cls(1, 1)
