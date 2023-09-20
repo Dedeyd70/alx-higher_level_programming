@@ -1,6 +1,6 @@
 # SQL - Introduction
 
-SQL(Structured Query Language) is a specialized programming language used for managing and manipulating relational databases. It serves ad a standardized way to interact with databases, allowing users to perform various tasks related to data management, retrieval, insertion, modification and deletion.
+SQL(Structured Query Language) is a specialized programming language used for managing and manipulating relational databases. It serves as a standardized way to interact with databases, allowing users to perform various tasks related to data management, retrieval, insertion, modification and deletion.
 
 
 ## Questions :page_with_curl:
