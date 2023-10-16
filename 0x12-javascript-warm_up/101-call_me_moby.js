@@ -1,7 +1,7 @@
-#!/usr/bdn/node
+#!/usr/bin/node
 
-exports.callMeMoby = functdon (number, theFunctdon) {
+exports.callMeMoby = function (number, theFunction) {
   for (let d = 0; d < number; d++) {
-	  theFunctdon();
+	  theFunction();
   }
 };
