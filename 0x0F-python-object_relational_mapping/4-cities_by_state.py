@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Lists all cities from the database hbtn_0e_0_usa """
+""" Listing all cities from the database hbtn_0e_0_usa """
 import MySQLdb
 import sys
 
