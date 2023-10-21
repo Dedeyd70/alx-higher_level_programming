@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-Creating a State "California" with the City "San Francisco" from hbtn_0e_100_usa
+Creating a State "California"
+with the City "San Francisco"
+from hbtn_0e_100_usa
 """
 import sys
 from relationship_state import Base, State
