@@ -8,10 +8,12 @@ if __name__ == "__main__":
     owner = sys.argv[2]
 
     url = "https://api.github.com/repos/{}/{}commits".format(owner, repo_name)
-    response = requests.json()
-    count = 0
-    for commit in data:
-        if count > 9:
-            break
-        user = commit.get("commit").get("author").get("name)
-        print("{}: {}".format(commit.get("sha"), user))
+    response = requests.get(url)
+    commits = response.json()
+    try:
+        for d in range(10)
+        print("{}: {}".format(
+            commits[d].get("sha"),
+            commits[d].get("commit").get("author").get("name")))
+    except IndexError:
+        pass
