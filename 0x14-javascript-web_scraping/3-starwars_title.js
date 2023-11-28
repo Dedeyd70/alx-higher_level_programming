@@ -11,7 +11,7 @@ request.get(apiURL, (err, response, body) => {
   }
   const movieData = JSON.parse(body);
   if (movieData.detail === 'Not found') {
-    console.log('Err: Movie with ID ${movieID} not found.');
+    console.log(`Err: Movie with ID ${movieID} not found.`);
     return;
   }
   console.log(`${movieData.title}`);
