@@ -9,8 +9,13 @@ request.get(apiURL, (err, response, body) => {
     console.log(err);
     return;
   }
-  const filmsData = JSON.parse(body);
-  const moviesWithWedgeAntilles = filmsData.results.filter(movie => movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${wedgeAntillesID}/`));
 
-  console.log(`${moviesWithWedgeAntilles.length}`);
+  if (response.statusCode === 200) {
+    const filmsData = JSON.parse(body);
+    const moviesWithWedgeAntilles = filmsData.results.filter(movie => movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${wedgeAntillesID}/`));
+
+    console.log(`${moviesWithWedgeAntilles.length}`);
+  } else {
+    console.error(`${response.statusCode}`);
+  }
 });
