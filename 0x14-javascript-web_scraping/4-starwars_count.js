@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const request = require('request');
-const apiURL = process.argv[2];
+const apiURL = process.argv[2] || 'https://swapi-api.alx-tools.com/api/films/';
 const wedgeAntillesID = 18;
 
 request.get(apiURL, (err, response, body) => {
