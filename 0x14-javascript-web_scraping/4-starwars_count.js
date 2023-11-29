@@ -1,27 +1,24 @@
 #!/usr/bin/node
 
 const request = require('request');
-const apiURL = process.argv[2] || 'https://swapi-api.alx-tools.com/api/films/';
-const wedgeAntillesID = 18;
+const apiUrl = process.argv[2];
 
-request.get(apiURL, (err, response, body) => {
+request(apiUrl, function (err, response, body) {
   if (err) {
     console.log(err);
-    return;
-  }
-
-  try {
-    const filmsData = JSON.parse(body);
-
-    if (filmsData && filmsData.results) {
-      const moviesWithWedgeAntilles = filmsData.results.filter(movie => movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${wedgeAntillesID}/`));
-
-      console.log(`${moviesWithWedgeAntilles.length}`);
-    } else {
-      console.error('Invalid API response structure');
+  } else if (response.statusCode === 200) {
+    const films = JSON.parse(body).results;
+    let count = 0;
+    for (const film of films) {
+      const filmChars = film.characters;
+      for (const char of filmChars) {
+        if (char.includes('18')) {
+          count++;
+        }
+      }
     }
-  } catch (error) {
-    console.error('Error parsing JSON:', error);
+    console.log(count);
+  } else {
+    console.log('Oops! An error occured. Status code: ' + response.statusCode);
   }
 });
-
