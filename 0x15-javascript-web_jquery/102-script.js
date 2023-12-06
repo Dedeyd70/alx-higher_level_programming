@@ -1,7 +1,7 @@
 $(document).ready(function() {
-      $("#btn_translate").click(function() {
+      $("INPUT#btn_translate").click(function() {
         // Get the language code entered by the user
-        let languageCode = $("#language_code").val();
+        let languageCode = $("INPUT#language_code").val();
 
         // Make an AJAX request to fetch the translation
         $.ajax({
@@ -10,7 +10,7 @@ $(document).ready(function() {
           data: { lang: languageCode },
           success: function(data) {
             // Update the content of the <div> with the fetched translation
-            $("#hello").text(data.hello);
+            $("#DIVhello").text(data.hello);
           },
           error: function() {
             // Handle errors if the request fails
