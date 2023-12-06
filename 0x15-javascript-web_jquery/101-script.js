@@ -1,7 +1,7 @@
 $(document).ready(function() {
       // Add item to the list
       $("#add_item").click(function() {
-        var newItem = $("<li>").text("Item");
+        const newItem = $("<li>").text("Item");
         $("ul.my_list").append(newItem);
       });
 
