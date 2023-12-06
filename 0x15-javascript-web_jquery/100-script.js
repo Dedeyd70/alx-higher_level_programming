@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Wait for the DOM to be fully loaded before manipulating it
-    var headerElement = document.querySelector('header');
+    const headerElement = document.querySelector('header');
 
     // Check if the header element is found
     if (headerElement) {
